@@ -1,6 +1,12 @@
 let transactions = [];
 let myChart;
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
@@ -151,3 +157,4 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
