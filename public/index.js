@@ -3,7 +3,7 @@ let myChart;
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js');
+    navigator.serviceWorker.register('/serviceworker.js');
   });
 }
 
